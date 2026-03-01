@@ -1,0 +1,11 @@
+from flask import Flask, render_template
+import i18n
+i18n.load_path.append('./dic')
+i18n.t('foo.hi') # Hello world !
+
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return render_template("hello.html")
